@@ -1,11 +1,20 @@
 # Germany GDP Analysis 📈  
 
-This project analyzes Germany's Gross Domestic Product (GDP) over time using Python and various data processing and machine learning techniques. The script performs data cleaning, visualization, and linear regression to predict GDP trends.  
+This project analyzes Germany's Gross Domestic Product (GDP) over time using Python and various data processing and machine learning techniques. The data was downloaded from the **World Bank** and is contained in the file:  
+
+**Source Data:**  
+- `API_NY.GDP.MKTP.CD_DS2_es_csv_v2_5998674.csv` – Raw GDP data from the World Bank.  
+
+**Project Files:**  
+- `main.py` – Python script containing the code for data processing, visualization, and model training.  
+- `Metadata_Country_API.csv` – Metadata with country information.  
+- `Metadata_Indicator_API.csv` – Metadata with indicator details.  
+- `linearRegresion_Germany.xlsx` – Output file containing the processed GDP data and predictions.  
 
 ## Features  
 
 - **Data Preparation:**  
-  - Reads GDP data from a CSV file.  
+  - Reads GDP data from the World Bank CSV file.  
   - Filters data for Germany and processes it for analysis.  
   - Transposes and renames columns for better readability.  
 
@@ -19,7 +28,7 @@ This project analyzes Germany's Gross Domestic Product (GDP) over time using Pyt
   - Implements linear regression using `sklearn` to determine optimal parameters.  
 
 - **File Management:**  
-  - Generates an Excel file containing the processed GDP data.  
+  - Generates an Excel file (`linearRegresion_Germany.xlsx`) containing the processed GDP data.  
   - Ensures the output file is updated without duplication.  
 
 ## Project Structure  
@@ -27,9 +36,12 @@ This project analyzes Germany's Gross Domestic Product (GDP) over time using Pyt
 ```
 📂 Project Directory  
 │-- API_NY.GDP.MKTP.CD_DS2_es_csv_v2_5998674.csv  # GDP data file  
-│-- script.py                                     # Main Python script  
+│-- Metadata_Country_API.csv                      # Country metadata  
+│-- Metadata_Indicator_API.csv                    # Indicator metadata  
+│-- main.py                                       # Main Python script  
 │-- requirements.txt                              # Required dependencies  
 │-- README.md                                     # Project documentation  
+│-- linearRegresion_Germany.xlsx                  # Processed GDP output  
 ```
 
 ## Installation  
@@ -49,13 +61,13 @@ This project analyzes Germany's Gross Domestic Product (GDP) over time using Pyt
 
 Run the script to analyze Germany's GDP:  
 ```shell
-python script.py
+python main.py
 ```
 
 ## Key Code Sections  
 
 ### 1. Data Processing  
-The script loads and processes Germany's GDP data from the provided CSV file:  
+The script loads and processes Germany's GDP data from the World Bank CSV file:  
 ```python
 df = gdp_df[gdp_df['Country Name'] == 'Alemania']
 df = df.drop(columns=['Country Name','Country Code', 'Indicator Name', 'Indicator Code'])
