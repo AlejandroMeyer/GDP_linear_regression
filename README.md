@@ -48,8 +48,7 @@ This project analyzes Germany's Gross Domestic Product (GDP) over time using Pyt
 
 1. Clone the repository:  
    ```shell
-   git clone https://github.com/yourusername/germany-gdp-analysis.git
-   cd germany-gdp-analysis
+   [git clone https://github.com/AlejandroMeyer/GDP_linear_regression.git]
    ```
 
 2. Install dependencies:  
